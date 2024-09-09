@@ -18,7 +18,7 @@ public class Email{
     public Email (String firstName, String lastName){
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Email has been created: "+this.firstName+this.lastName);
+        System.out.println("New Worker: "+this.firstName+" "+this.lastName);
 
         // Calling menthod to ask for department
 
@@ -31,14 +31,14 @@ public class Email{
 
         // Combining data collected till now to generate email
         email = firstName.toLowerCase()+ "."+lastName.toLowerCase()+"@"+department+"."+ companySuffix ;
-        System.out.println("Your email is: "+email);
+        //System.out.println("Your email is: "+email); commented as not needed anymore
 
     }
 
     // Determine the department (sales, development, accounting), if none leave blank
 
     private String setDepartment(){
-        System.out.println("Enter the department\n1 for Sales \n2 for Development\n3 for Accounting\n0 for none");
+        System.out.println("Department codes: \n1 for Sales \n2 for Development\n3 for Accounting\n0 for none \nEnter the department code: ");
         Scanner in = new Scanner(System.in);
         int depChoice = in.nextInt();
         if(depChoice==1){
@@ -102,7 +102,7 @@ public class Email{
 
     public String showInfo(){
         return "DISPLAY NAME: "+ firstName + " "+ lastName+
-        "Company Email: "+ email +"MAILBOX CAPACITY: " + "mb";
+        "\nCompany Email: "+ email +"\nMAILBOX CAPACITY: " + "mb";
     }
 
 
